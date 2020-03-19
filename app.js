@@ -25,6 +25,52 @@ window.addEventListener('load', () => {
         })
         .then(response => showOutput(response))
         .catch(err => console.log(err));
+
+      function showOutput (response) {
+        console.log(response);
+        let weather = response.data;
+        console.log(weather);
+        const {
+          temperature,
+          precipProbability,
+          humidity,
+          summary,
+          icon
+        } = weather.currently;
+        console.log(temperature);
+
+        // Set DOM Elements from the API
+        temperatureDegree.textContent = temperature;
+        precipitationSpan.textContent = precipProbability;
+        humiditySpan.textContent = humidity;
+        temperatureDescription.textContent = summary;
+        locationTimezone.textContent = weather.timezone;
+
+        // Change humidity to percentage
+        const humidityPercentage = humidity * 100;
+        humiditySpan.textContent = Math.floor(humidityPercentage);
+        const preciptationPercentage = precipProbability * 100;
+        precipitationSpan.textContent = Math.floor(preciptationPercentage);
+
+        // Change temperature color based on range
+        var element = document.getElementById('temp');
+        var image = document.getElementById('image');
+        if (temperature >= 35) {
+          element.classList.add('red');
+          image.classList.add('image-summer');
+        } else if (temperature < 35 && temperature >= 28) {
+          element.classList.add('green');
+          image.classList.add('image-spring');
+        } else if (temperature < 28 && temperature >= 15) {
+          element.classList.add('yellow');
+          image.classList.add('image-autum');
+        } else if (temperature < 15) {
+          element.classList.add('blue');
+          image.classList.add('image-winter');
+        } else {
+          element.classList.add('blueviolet');
+        }
+      }
     });
   }
 });
