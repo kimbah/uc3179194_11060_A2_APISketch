@@ -20,17 +20,26 @@
                 <h2 class="temperature-degree">34</h2>
                 <span>C</span>
             </div>
+            <div class="precipitation">
+                <h2 class="temperature-humidity">Chance of rain:</h2>
+                <span>precipitation</span>
+                <span>%</span>
+            </div>
             <div class="humidity">
                 <h2 class="temperature-humidity">Humidity</h2>
                 <span>humidity</span>
                 <span>%</span>
             </div>
-            <div class="temperature-description">Weather description</div>
+            <div class="temperature-description">
+                <h2 class="summary">Summary:</h2>
+                <span>summary</span>
+            </div>
         </div>
         <div id="daily">
             <h2 class="weekly">This Weeks Weather</h2>
             <table id="dailyForecast" width="100%"></table>
         </div>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.1/axios.min.js"></script>
         <script src="skycons.js"></script>
         <script src="app.js"></script>
