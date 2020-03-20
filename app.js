@@ -1,7 +1,9 @@
+const wDay = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
 window.addEventListener('load', () => {
   let long;
   let lat;
-  let temperatureDescription = document.querySelector('.temperature-description');
+  let temperatureDescription = document.querySelector('.temperature-description span');
   const temperatureDegree = document.querySelector('.temperature-degree');
   const locationTimezone = document.querySelector('.location-timezone');
   //   const temperatureSection = document.querySelector('.temperature');
@@ -70,7 +72,51 @@ window.addEventListener('load', () => {
         } else {
           element.classList.add('blueviolet');
         }
+
+        // Set Icons
+        setIcons(icon, document.querySelector('.icon'));
+
+        // Render Weekly forecast table data
+        document.getElementById('dailyForecast').innerHTML = renderWeeklyForecast(
+          weather.daily
+        );
+        console.log(weather.daily);
+
+        function renderWeeklyForecast (fcData) {
+          let rowcount;
+          let resultsHTML =
+                        '<tr><th>Day</th><th>Conditions</th><th>Hi</th><th>Lo</th></tr>';
+          rowcount = fcData.data.length;
+          if (rowcount > 8) {
+            rowcount = 8;
+          }
+          let i;
+          for (i = 0; i < rowcount; i++) {
+            let ts = new Date(fcData.data[i].time * 1000);
+
+            let dayTime = wDay[ts.getDay()];
+            let summary = fcData.data[i].summary;
+            let tempHigh = `${Math.round(fcData.data[i].temperatureHigh)}&deg`;
+            let tempLow = `${Math.round(fcData.data[i].temperatureLow)}&deg`;
+
+            resultsHTML += renderRow(dayTime, summary, tempHigh, tempLow);
+          }
+
+          return resultsHTML;
+        }
+
+        // Render weekly forecast table rows
+        function renderRow (dayTime, summary, tempHigh, lowtemp) {
+          return `<tr><td>${dayTime}</td><td>${summary}</td><td>${tempHigh}</td><td>${lowtemp}</td></tr>`;
+        }
       }
     });
+  }
+
+  function setIcons (icon, iconID) {
+    const skycons = new Skycons({ color: 'white' });
+    const currentIcon = icon.replace(/-/g, '_').toUpperCase();
+    skycons.play();
+    return skycons.set(iconID, Skycons[currentIcon]);
   }
 });
