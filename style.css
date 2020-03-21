@@ -3,3 +3,154 @@
     margin: 0px;
     box-sizing: border-box;
 }
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background: linear-gradient(rgb(47, 150, 163), rgb(48, 62, 143)); */
+    background: #FEAC5E;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #4BC0C8, #C779D0, #FEAC5E);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #4BC0C8, #C779D0, #FEAC5E);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: sans-serif;
+    color: white !important;
+}
+
+.location, .temperature {
+    height: 20vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.location-timezone {
+    margin-right: 30px;
+}
+
+.weekly, .daily {
+    font-size: 2em;
+    margin-top: 50px;
+}
+
+.temperature {
+    flex-direction: column;
+}
+
+.degree-section {
+    display: flex;
+    align-items: center;
+}
+
+.degree-section span {
+    margin: 10px;
+    font-size: 2.5em;
+}
+
+.degree-section span:last-of-type {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.degree-section h2 {
+    font-size: 1.5em;
+    margin-right: 15px;
+}
+
+.humidity, .precipitation, .temperature-description {
+    display: flex;
+    align-items: center;
+}
+
+.humidity span, .precipitation span {
+    font-size: 1.7em;
+    margin-left: 20px;
+}
+
+.humidity span:last-child, .precipitation span:last-child, .temperature-description span {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.temperature-description span {
+    font-size: 1.7em;
+    margin-left: 20px;
+}
+
+.temperature > div {
+    margin-top: 5px;
+}
+
+.image-winter, .image-spring, .image-summer, .image-autum {
+    margin: 30px 0;
+    width: 400px;
+    height: 400px;
+    border-radius: 10%;
+    background-size: cover;
+}
+
+.image-winter {
+    background-image: url(./images/winter.jpg);
+}
+
+.image-spring {
+    background-image: url(./images/spring.jpg);
+}
+
+.image-summer {
+    background-image: url(./images/summer.jpg);
+}
+
+.image-autum {
+    background-image: url(./images/autum.jpg);
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+.yellow {
+    color: yellow;
+}
+
+.blue {
+    color: blue;
+}
+
+.white {
+    color: white;
+}
+
+#daily {
+    margin-bottom: 20px;
+}
+
+#daily h2 {
+    text-align: center;
+    margin: 80px 0 30px;
+}
+
+.weekly, .daily {
+    color: black;
+}
+
+th {
+    text-align: left;
+    color: rgb(68, 68, 68);
+}
+
+td, th {
+    padding: 3px;
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgb(97, 154, 177);
+}
