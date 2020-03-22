@@ -10,7 +10,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* background: linear-gradient(rgb(47, 150, 163), rgb(48, 62, 143)); */
     background: #FEAC5E;
     /* fallback for old browsers */
     background: -webkit-linear-gradient(to top, #4BC0C8, #C779D0, #FEAC5E);
