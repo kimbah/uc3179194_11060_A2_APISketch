@@ -1,7 +1,9 @@
 const wDay = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 window.addEventListener('load', () => {
-  let temperatureDescription = document.querySelector('.temperature-description span');
+  let temperatureDescription = document.querySelector(
+    '.temperature-description span'
+  );
   const temperatureDegree = document.querySelector('.temperature-degree');
   const locationTimezone = document.querySelector('.location-timezone');
   const humiditySpan = document.querySelector('.humidity span');
@@ -18,7 +20,9 @@ window.addEventListener('load', () => {
       },
       // If user blocks request for geoloaction show error and altert user
       function (error) {
-        window.alert('Please allow location - else default location is Brisbane/Australia');
+        window.alert(
+          'Please allow location - else default location is Brisbane/Australia'
+        );
         console.warn('ERROR(' + error.code + '): ' + error.message);
         let currentLocation = -27.46794 + ',' + 153.02809;
         let key = '4b4a48fa0948aa2966733db3181f88e7';
@@ -39,7 +43,13 @@ window.addEventListener('load', () => {
 
     function showOutput (response) {
       let weather = response.data;
-      const { temperature, precipProbability, humidity, summary, icon } = weather.currently;
+      const {
+        temperature,
+        precipProbability,
+        humidity,
+        summary,
+        icon
+      } = weather.currently;
 
       // Set DOM Elements from the API (round temperature to 1 decimal place)
       temperatureDegree.textContent = Math.round(temperature);
@@ -80,7 +90,8 @@ window.addEventListener('load', () => {
 
       function renderWeeklyForecast (dailyForecast) {
         let rowcount;
-        let resultsHTML = '<tr><th>Day</th><th>Conditions</th><th>Hi</th><th>Lo</th></tr>';
+        let resultsHTML =
+          '<tr><th>Day</th><th>Conditions</th><th>Hi</th><th>Lo</th></tr>';
         rowcount = dailyForecast.data.length;
         if (rowcount > 8) {
           rowcount = 8;
@@ -91,8 +102,12 @@ window.addEventListener('load', () => {
 
           let dayTime = wDay[time.getDay()];
           let summary = dailyForecast.data[i].summary;
-          let tempHigh = `${Math.round(dailyForecast.data[i].temperatureHigh)}&deg`;
-          let tempLow = `${Math.round(dailyForecast.data[i].temperatureLow)}&deg`;
+          let tempHigh = `${Math.round(
+            dailyForecast.data[i].temperatureHigh
+          )}&deg`;
+          let tempLow = `${Math.round(
+            dailyForecast.data[i].temperatureLow
+          )}&deg`;
 
           resultsHTML += renderRow(dayTime, summary, tempHigh, tempLow);
         }

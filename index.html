@@ -1,48 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>Weather</title>
-        <link rel="stylesheet" href="./style.css" />
-        <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet" />
-    </head>
-    <body>
-        <div id="image"></div>
-        <div class="location">
-            <h1 class="location-timezone">Timezone</h1>
-            <canvas class="icon" width="128" height="128"></canvas>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Weather</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Abel"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="image">
+      <div class="location">
+        <h1 class="location-timezone">Timezone</h1>
+        <canvas class="icon" width="128" height="128"></canvas>
+      </div>
+      <div class="temperature">
+        <h2 class="daily">Todays Weather</h2>
+        <div id="temp" class="degree-section">
+          <h2 class="currently">Currently:</h2>
+          <span class="temperature-degree">34</span>
+          <span>C</span>
         </div>
-        <div class="temperature">
-            <h2 class="daily">Todays Weather</h2>
-            <div id="temp" class="degree-section">
-                <h2 class="currently">Currently:</h2>
-                <span class="temperature-degree">34</span>
-                <span>C</span>
-            </div>
-            <div class="precipitation">
-                <h2 class="temperature-humidity">Chance of rain:</h2>
-                <span>precipitation</span>
-                <span>%</span>
-            </div>
-            <div class="humidity">
-                <h2 class="temperature-humidity">Humidity</h2>
-                <span>humidity</span>
-                <span>%</span>
-            </div>
-            <div class="temperature-description">
-                <h2 class="summary">Summary:</h2>
-                <span>summary</span>
-            </div>
+        <div class="precipitation">
+          <h2 class="temperature-humidity">Chance of rain:</h2>
+          <span>precipitation</span>
+          <span>%</span>
         </div>
-        <div id="daily">
-            <h2 class="weekly">This Weeks Weather</h2>
-            <table id="dailyForecast" width="100%"></table>
+        <div class="humidity">
+          <h2 class="temperature-humidity">Humidity:</h2>
+          <span>humidity</span>
+          <span>%</span>
         </div>
+        <div class="temperature-description">
+          <h2 class="summary">Summary:</h2>
+          <span>summary</span>
+        </div>
+      </div>
+      <div id="daily">
+        <h2 class="weekly">This Weeks Weather</h2>
+        <table id="dailyForecast" width="100%"></table>
+      </div>
+    </div>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.1/axios.min.js"></script>
-        <script src="skycons.js"></script>
-        <script src="app.js"></script>
-    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.1/axios.min.js"></script>
+    <script src="skycons.js"></script>
+    <script src="app.js"></script>
+  </body>
 </html>

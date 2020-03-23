@@ -5,19 +5,19 @@
 }
 
 body {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: #FEAC5E;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, #4BC0C8, #C779D0, #FEAC5E);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top, #4BC0C8, #C779D0, #FEAC5E);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-color: cadetblue;
+    background: linear-gradient(to right, rgb(121, 145, 187), rgb(174, 201, 248), rgb(148, 186, 252));
     font-family: sans-serif;
-    color: white !important;
+    color: white;
+}
+
+#image {
+    height: 100vh;
+    min-height: 500px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .location, .temperature {
@@ -25,6 +25,10 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+.location {
+    justify-content: space-evenly;
 }
 
 .location-timezone {
@@ -84,20 +88,14 @@ body {
     margin-top: 5px;
 }
 
-.image-winter, .image-spring, .image-summer, .image-autum {
-    margin: 30px 0;
-    width: 400px;
-    height: 400px;
-    border-radius: 10%;
-    background-size: cover;
-}
-
 .image-winter {
     background-image: url(./images/winter.jpg);
 }
 
 .image-spring {
     background-image: url(./images/spring.jpg);
+    background-color: hsla(0, 0%, 10%, 0.90);
+    background-blend-mode: overlay;
 }
 
 .image-summer {
@@ -138,10 +136,12 @@ body {
 }
 
 .weekly, .daily {
-    color: black;
+    color: white;
 }
 
 table {
+    display: flex;
+    justify-content: center;
     font-size: 1.5em;
 }
 
@@ -153,7 +153,7 @@ table {
 
 th {
     text-align: left;
-    color: rgb(68, 68, 68);
+    color: white;
 }
 
 td, th {
