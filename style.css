@@ -109,7 +109,6 @@ body {
 .image-autum {
     background-image: url(./images/autum.jpg);
     background-color: hsla(0, 0%, 10%, 0.90);
-    background-blend-mode: overlay;
 }
 
 .red {
