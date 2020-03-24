@@ -4,7 +4,7 @@
 
 ## <span style="color:orange">Link to web application below:<span>
 
-<https:/starsaresouls.com/public/weather_app/>
+<https://starsaresouls.com/public/weather_app/>
 
 </br>
 
